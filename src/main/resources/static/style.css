@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}    
+
+.hide {
+    display: none!important;
+}
+
+nav {
+    min-height: 80px;
+    padding: 12px 40px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 48px;
+    row-gap: 12px;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    opacity: .9;
+}
+
+h1 {
+    font-size: 32px;
+    padding: 8px 0;
+}
+
+section {
+    padding: 20px 8px;
+}
+
+table {
+    background-color: rgb(236, 236, 236);
+    width: 100%;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    max-width: 1200px;
+    margin: 16px 0;
+}
+
+td {
+    padding: 8px;
+    font-size: 16px;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+thead td {
+    font-weight: bold;
+}
+
+td:first-child {
+    width: 32px;
+}
+td:last-child {
+    width: 140px;
+}
+
+.edit-row, .delete-row {
+    display: inline;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 8px 12px;
+}
+
+.default-btn {
+    background-color: blue;
+    color: white;
+    border-color: darkblue;
+}
+
+.default-btn:hover {
+    color: rgb(255, 255, 255, 0.9);
+    background-color: darkblue;
+}
+
+label, input, select {
+    font-size: 24px;
+}
+label {
+    margin-right: 24px;
+}
+
+input, select {
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+form div {
+    margin: 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form div label {
+    flex-basis: 200px;
+} 
+
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+
+@media (min-width: 1024px) {
+    nav {
+        justify-content: start;
+        padding: 12px 80px;
+    }
+    td {
+        font-size: 20px;
+    }
+
+    td:first-child {
+        width: 40px;
+    }
+    section {
+        padding: 40px 80px;
+    }
+
+    .btn {
+        font-size: 32px;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

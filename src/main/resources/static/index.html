@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Personal Finance Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+        <nav>
+            <div class="nav-link" id="categories" onclick="showSection('categoriesView')">Categories</div>
+            <div class="nav-link" id="transactions" onclick="showSection('transactionsView')">Transactions</div>
+        </nav>
+    <article>
+        <section id="categoriesView" class="">
+            <h1>Категорії витрат/доходів</h1>
+            <table>
+                <thead>
+                    <td>#</td>
+                    <td>Назва</td>
+                    <td>Опис</td>
+                    <td>Управління</td>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="btn default-btn" onclick="addNewCategory()">Додати нову категорію</div>
+        </section>
+        <section id="categoriesEdit" class="hide">
+            <h1>Реєстрація/Редагування категорій</h1>
+            <form>
+                <div>
+                    <label for="categoryName">Назва категорії</label>
+                    <input type="text" name="categoryName" id="categoryName" style="width: 40%;">
+                </div>
+                <div>
+                    <label for="categoryDesc">Короткий опис</label>
+                    <input type="text" name="categoryDesc" id="categoryDesc" style="width: 80%;">
+                </div>
+                <div class="buttons">
+                    <div class="btn default-btn" id="saveCategory">Зберегти</div>
+                    <div class="btn default-btn" onclick="clearCategoryField()">Очистити</div>
+                </div>
+            </form>
+        </section>
+        <section id="transactionsView" class="hide">
+            <h1>Транзакції</h1>
+            <table>
+                <thead>
+                    <td>#</td>
+                    <td>Категорія</td>
+                    <td>Тип операції</td>
+                    <td>Сума</td>
+                    <td>Дата</td>
+                    <td>Опис</td>
+                    <td>Управління</td>
+                </thead>
+                <tbody></tbody>
+
+            </table>
+            <div class="btn default-btn" onclick="addNewTransaction()">Додати нову транзацію</div>
+        </section>
+        <section id="transactionsEdit" class="hide">
+            <h1>Реєстрація/Редагування Транзакцій</h1>
+            <form>
+                <div>
+                    <label for="selectCategory">Назва категорії</label>
+                    <select name="selectCategory" id="selectCategory">
+                                            
+                    </select>
+                </div>
+                <div>
+                    <label for="transactionType">Тип операції</label>
+                    <input type="text" name="transactionType" id="transactionType">
+                </div>
+                <div>
+                    <label for="transactionSum">Сума</label>
+                    <input type="number" name="transactionSum" min="0" id="transactionSum" style="width: 160px;">
+                </div>
+                <div>
+                    <label for="transactionDesc">Короткий опис</label>
+                    <input type="text" name="transactionDesc" id="transactionDesc" style="width: 80%;" value="">
+                </div>
+                <div>
+                    <label for="transactionDate">Дата</label>
+                    <input type="date" name="transactionDate" id="transactionDate">
+                </div>
+                <div class="buttons">
+                    <div class="btn default-btn" id="saveTransaction">Зберегти</div>
+                    <div class="btn default-btn" onclick="clearTransactionField()">Очистити</div>
+                </div>
+            </form>
+        </section>
+    </article>
+</body>
+</html>
+
