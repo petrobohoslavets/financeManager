@@ -26,6 +26,10 @@ public class CategoryController {
     public Category getCategoryById(@PathVariable("id") Long id) {
         return categoryService.getCategoryById(id);
     }
+    @GetMapping("/name={name}")
+    public Category getCategoryWithName(@PathVariable("name") String name) {
+        return categoryService.getCategoryWithName(name);
+    }
     @PutMapping("/")
     public Category createCategory(@RequestBody Category category) {
         return categoryService.createCategory(category);

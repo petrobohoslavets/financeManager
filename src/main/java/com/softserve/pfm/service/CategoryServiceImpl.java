@@ -1,10 +1,12 @@
 package com.softserve.pfm.service;
 
 import com.softserve.pfm.model.Category;
+import com.softserve.pfm.model.Transactions;
 import com.softserve.pfm.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +31,12 @@ public class CategoryServiceImpl implements CategoryService {
         if(optionalCategory.isEmpty())
             throw new IllegalStateException("Category with id = " + id + " does not exist");
         return optionalCategory.get();
+    }
+
+    public Category getCategoryWithName(String name) {
+        Category category = categoryRepository.getCategoryWithName(name);
+        if(category == null) return new Category(null, null, null, new ArrayList<Transactions>());
+        return category;
     }
 
     @Override

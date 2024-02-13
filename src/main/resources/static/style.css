@@ -59,6 +59,12 @@ thead td {
     font-weight: bold;
 }
 
+tfoot {
+    background-color: rgb(163, 223, 163);
+    font-weight: bold;
+}
+
+
 td:first-child {
     width: 32px;
 }
@@ -119,6 +125,24 @@ form div label {
     display: flex;
     gap: 8px;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.chart-container {
+    flex-basis: 540px;
+}
+
+#reportChart {
+    margin-top: 12px;
+}
+
+
+
 
 
 @media (min-width: 1024px) {

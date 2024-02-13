@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -53,9 +54,15 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<Object[]> getReport(String startDate, String endDate) {
-        if(!LocalDate.parse(startDate).isBefore(LocalDate.parse(endDate))) return null;
-        else return transactionRepository.getReport(startDate, endDate);
+    public List<Object[]> getReport(String startDate, String endDate, String type) {
+        if(!LocalDate.parse(startDate).isBefore(LocalDate.parse(endDate))) return new ArrayList<>();
+        else return transactionRepository.getReport(startDate, endDate, type);
+    }
+
+    @Override
+    public List<Object[]> getReportByCategory(String startDate, String endDate, Long categoryId, String type) {
+        if(!LocalDate.parse(startDate).isBefore(LocalDate.parse(endDate))) return new ArrayList<>();
+        else return transactionRepository.getReportById(startDate, endDate, categoryId, type);
     }
 
     @Override

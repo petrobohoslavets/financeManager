@@ -35,9 +35,13 @@ public class TransactionController {
         return transactionService.getTransactionsWithCategory(id);
     }
 
-    @GetMapping("/report/{startDate}/{endDate}")
-    public List<Object[]> getReport(@PathVariable("startDate") String startDate, @PathVariable("endDate") String endDate) {
-        return transactionService.getReport(startDate, endDate);
+    @GetMapping("/report/{startDate}/{endDate}/{type}")
+    public List<Object[]> getReport(@PathVariable("startDate") String startDate, @PathVariable("endDate") String endDate, @PathVariable("type") String type) {
+        return transactionService.getReport(startDate, endDate, type);
+    }
+    @GetMapping("/report/{startDate}/{endDate}/{type}/{categoryId}")
+    public List<Object[]> getReportByCategory(@PathVariable("startDate") String startDate, @PathVariable("endDate") String endDate, @PathVariable("type") String type, @PathVariable("categoryId") Long categoryId) {
+        return transactionService.getReportByCategory(startDate, endDate, categoryId, type);
     }
 
     @PutMapping("/{categoryId}/{type}/{sum}/{date}/{description}")
